@@ -13,11 +13,10 @@ import  {Link}  from 'react-router-dom'
      let PromotedRestaurandCard=withPromotedRestaurandCard(RestaurantCard)
      
     let fetchRestaurants=async()=>{
-
-      let data=await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.5195099&lng=78.3947827');
+      let data=await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.455566492207826&lng=78.36812589393311&collection=83639&tags=layout_CCS_Biryani&sortBy=&filters=&type=rcv2&offset=0&page_type=null');
       let jsondata= await data.json()
-console.log(jsondata.data.cards[4].card.card.gridElements.infoWithStyle.restaurants)
-setRestaurants(jsondata.data.cards[4].card.card.gridElements.infoWithStyle.restaurants)
+
+ setRestaurants(jsondata.data.cards.slice(3))
 
 
     }
@@ -26,14 +25,15 @@ setRestaurants(jsondata.data.cards[4].card.card.gridElements.infoWithStyle.resta
 
     <div className="flex flex-wrap justify-center px-5 ">
 {
-     restaurants.map((Restaurant,idx)=>{
+     restaurants?.map((Restaurant,idx)=>{
+             
+        let {info}=Restaurant.card.card
 
-
-     return Restaurant.info.avgRating<4? <Link key={Restaurant.info.id} to={"Restaurant/"+Restaurant.info.id} ><RestaurantCard 
-        Restaurant={Restaurant}
+     return info.avgRating<4? <Link key={info.id} to={"Restaurant/"+info.id} ><RestaurantCard 
+        Restaurant={info}
        
-     /></Link>: <Link to={"Restaurant/"+Restaurant.info.id} key={Restaurant.info.id}><PromotedRestaurandCard
-        Restaurant={Restaurant}
+     /></Link>: <Link to={"Restaurant/"+info.id} key={info.id}><PromotedRestaurandCard
+        Restaurant={info}
      /></Link>
     
     })

@@ -3,9 +3,7 @@ import {RESTAURANT_IMG} from '../../utils/constants'
 
 const RestaurantCard = ({Restaurant}) => {
 
-let {cloudinaryImageId,avgRating,cuisines,areaName,name,sla,costForTwo}=Restaurant.info;
-
-console.log(RESTAURANT_IMG+cloudinaryImageId);
+let {cloudinaryImageId,avgRating,cuisines,areaName,name,sla,costForTwo}=Restaurant;
 
 
   return (
