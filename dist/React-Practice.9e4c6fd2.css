@@ -37,7 +37,6 @@
       --tw-drop-shadow-color: initial;
       --tw-drop-shadow-alpha: 100%;
       --tw-drop-shadow-size: initial;
-      --tw-duration: initial;
     }
   }
 }
@@ -460,14 +459,6 @@
     height: calc(var(--spacing) * 50);
   }
 
-  .max-h-0 {
-    max-height: calc(var(--spacing) * 0);
-  }
-
-  .max-h-screen {
-    max-height: 100vh;
-  }
-
   .w-6\/12 {
     width: 50%;
   }
@@ -518,10 +509,6 @@
 
   .justify-center {
     justify-content: center;
-  }
-
-  .overflow-hidden {
-    overflow: hidden;
   }
 
   .rounded-2xl {
@@ -693,17 +680,6 @@
     transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
-  }
-
-  .transition-all {
-    transition-property: all;
-    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-    transition-duration: var(--tw-duration, var(--default-transition-duration));
-  }
-
-  .duration-300 {
-    --tw-duration: .3s;
-    transition-duration: .3s;
   }
 
   .sm\:bg-green-200 {
@@ -906,11 +882,6 @@
 }
 
 @property --tw-drop-shadow-size {
-  syntax: "*";
-  inherits: false
-}
-
-@property --tw-duration {
   syntax: "*";
   inherits: false
 }

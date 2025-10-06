@@ -1,16 +1,10 @@
 import React, { useState } from 'react'
 import ItemList from './ItemList'
 const NestedMenuCard = ({card}) => {
-console.log(card)
+
 
 let[showItems,setShowItems]=useState([])
 
-
-console.log(showItems)
-// let handleClick=()=>{
-// setShowItems(!showItems);   
-// setCategory() 
-// }
 
 return (
     <div className="w-6/12 m-auto my-6  bg-gray-100 p-4 shadow-lg">

@@ -26875,13 +26875,7 @@ var _itemListDefault = parcelHelpers.interopDefault(_itemList);
 var _s = $RefreshSig$();
 const NestedMenuCard = ({ card })=>{
     _s();
-    console.log(card);
     let [showItems, setShowItems] = (0, _react.useState)([]);
-    console.log(showItems);
-    // let handleClick=()=>{
-    // setShowItems(!showItems);   
-    // setCategory() 
-    // }
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "w-6/12 m-auto my-6  bg-gray-100 p-4 shadow-lg",
         children: [
@@ -26890,7 +26884,7 @@ const NestedMenuCard = ({ card })=>{
                 children: card.title
             }, void 0, false, {
                 fileName: "src/components/MenuCard/NestedMenuCard.js",
-                lineNumber: 18,
+                lineNumber: 12,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -26921,7 +26915,7 @@ const NestedMenuCard = ({ card })=>{
                                         ]
                                     }, void 0, true, {
                                         fileName: "src/components/MenuCard/NestedMenuCard.js",
-                                        lineNumber: 35,
+                                        lineNumber: 29,
                                         columnNumber: 21
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -26934,18 +26928,18 @@ const NestedMenuCard = ({ card })=>{
                                             ]
                                         }, void 0, true, {
                                             fileName: "src/components/MenuCard/NestedMenuCard.js",
-                                            lineNumber: 37,
+                                            lineNumber: 31,
                                             columnNumber: 21
                                         }, undefined)
                                     }, void 0, false, {
                                         fileName: "src/components/MenuCard/NestedMenuCard.js",
-                                        lineNumber: 36,
+                                        lineNumber: 30,
                                         columnNumber: 21
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/MenuCard/NestedMenuCard.js",
-                                lineNumber: 25,
+                                lineNumber: 19,
                                 columnNumber: 17
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -26953,30 +26947,30 @@ const NestedMenuCard = ({ card })=>{
                                         itemCard: itemCard
                                     }, itemCard.card.info.id, false, {
                                         fileName: "src/components/MenuCard/NestedMenuCard.js",
-                                        lineNumber: 42,
+                                        lineNumber: 36,
                                         columnNumber: 21
                                     }, undefined))
                             }, void 0, false, {
                                 fileName: "src/components/MenuCard/NestedMenuCard.js",
-                                lineNumber: 40,
+                                lineNumber: 34,
                                 columnNumber: 17
                             }, undefined)
                         ]
                     }, category.categoryId, true, {
                         fileName: "src/components/MenuCard/NestedMenuCard.js",
-                        lineNumber: 23,
+                        lineNumber: 17,
                         columnNumber: 17
                     }, undefined);
                 })
             }, void 0, false, {
                 fileName: "src/components/MenuCard/NestedMenuCard.js",
-                lineNumber: 19,
+                lineNumber: 13,
                 columnNumber: 9
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/MenuCard/NestedMenuCard.js",
-        lineNumber: 16,
+        lineNumber: 10,
         columnNumber: 5
     }, undefined);
 };
@@ -27110,12 +27104,61 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-const MenuCard = ()=>{
+const MenuCard = ({ card })=>{
+    console.log(card);
+    let isActive = true;
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: "MenuCard"
+        className: "w-6/12 m-auto my-6  bg-gray-100 p-4 shadow-lg",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: "p-4 border-gray-300 border-b-2 ",
+            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "cursor-pointer flex justify-between",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        className: "text-xl font-medium",
+                        children: [
+                            card.title,
+                            " ( ",
+                            card.itemCards?.length,
+                            " )"
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/MenuCard/MenuCard.js",
+                        lineNumber: 12,
+                        columnNumber: 5
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                            className: "text-2xl cursor-pointer",
+                            children: [
+                                " ",
+                                isActive ? "\u02C4" : "\u02C5",
+                                " "
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/MenuCard/MenuCard.js",
+                            lineNumber: 14,
+                            columnNumber: 8
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/components/MenuCard/MenuCard.js",
+                        lineNumber: 13,
+                        columnNumber: 5
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/MenuCard/MenuCard.js",
+                lineNumber: 11,
+                columnNumber: 3
+            }, undefined)
+        }, void 0, false, {
+            fileName: "src/components/MenuCard/MenuCard.js",
+            lineNumber: 9,
+            columnNumber: 5
+        }, undefined)
     }, void 0, false, {
         fileName: "src/components/MenuCard/MenuCard.js",
-        lineNumber: 5,
+        lineNumber: 7,
         columnNumber: 5
     }, undefined);
 };
