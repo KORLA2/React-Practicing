@@ -6,6 +6,8 @@ import MenuCard from './MenuCard/MenuCard'
 const RestaurantMenu = () => {
     let {RestID}=useParams()
 let [Menu,setMenu]=useState([])
+let [showIndex,setShowIndex]=useState(null);
+
     useEffect(()=>{
       fetchResMenu()
     },[])
@@ -25,7 +27,7 @@ let [Menu,setMenu]=useState([])
 
             return item.card.card["@type"]==="type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory"?
             <NestedMenuCard key={idx}  card={item.card.card}/>:
-            <MenuCard key={idx} card={item.card.card}/>
+            <MenuCard key={idx} card={item.card.card}  showItems={idx===showIndex?true:false} setShowIndex={()=>setShowIndex(idx)}/>
             })
         }
         </div>
