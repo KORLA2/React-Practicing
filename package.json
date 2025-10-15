@@ -1,9 +1,11 @@
 {
   "dependencies": {
+    "@reduxjs/toolkit": "^2.9.0",
     "@tailwindcss/postcss": "^4.1.14",
     "parcel": "^2.16.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "react-redux": "^9.2.0",
     "react-router": "6.22",
     "react-router-dom": "6.22",
     "tailwindcss": "^4.1.14"
@@ -24,5 +26,12 @@
   "bugs": {
     "url": "https://github.com/KORLA2/React-Practicing/issues"
   },
-  "homepage": "https://github.com/KORLA2/React-Practicing#readme"
+  "homepage": "https://github.com/KORLA2/React-Practicing#readme",
+  "devDependencies": {
+    "@babel/core": "^7.28.4",
+    "@babel/preset-env": "^7.28.3",
+    "@testing-library/react": "^16.3.0",
+    "babel-jest": "^30.2.0",
+    "jest": "^30.2.0"
+  }
 }

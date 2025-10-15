@@ -14,6 +14,7 @@ import  {Link}  from 'react-router-dom'
      
     let fetchRestaurants=async()=>{
       let data=await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.455566492207826&lng=78.36812589393311&collection=83639&tags=layout_CCS_Biryani&sortBy=&filters=&type=rcv2&offset=0&page_type=null');
+      console.log(data)
       let jsondata= await data.json()
 
  setRestaurants(jsondata.data.cards.slice(3))
@@ -30,7 +31,7 @@ import  {Link}  from 'react-router-dom'
         let {info}=Restaurant.card.card
 
      return info.avgRating<4? <Link key={info.id} to={"Restaurant/"+info.id} ><RestaurantCard 
-        Restaurant={info}
+        Restaurant={info} 
        
      /></Link>: <Link to={"Restaurant/"+info.id} key={info.id}><PromotedRestaurandCard
         Restaurant={info}

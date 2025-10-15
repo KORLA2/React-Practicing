@@ -7,15 +7,32 @@ const RestaurantMenu = () => {
     let {RestID}=useParams()
 let [Menu,setMenu]=useState([])
 let [showIndex,setShowIndex]=useState(null);
-
+console.log(RestID);
+console.log("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=17.5195099&lng=78.3947827&restaurantId="+RestID)
     useEffect(()=>{
       fetchResMenu()
     },[])
-    async function fetchResMenu(){
- let data= await fetch("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=17.5195099&lng=78.3947827&restaurantId="+RestID)
- let jsondata=await data.json();
+  let fetchResMenu=async()=>{
+    try{
+let data= await fetch('https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=17.5195099&lng=78.3947827&restaurantId='+RestID+'&catalog_qa=undefined&query=Biryani&submitAction=ENTER' 
+);
+
+if (!data.ok){
+  throw new Error("HTTP error! status: " + data.status);
+}
  
-            setMenu(jsondata.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards.slice(1))
+
+ let jsondata=await data.json();
+
+ if (!jsondata?.data?.cards) {
+      console.error("Unexpected JSON structure:", jsondata);
+      return;
+    }
+  setMenu(jsondata.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards.slice(1))
+    }catch(err){
+      console.log("The Error is :",err)
+    }
+ 
     }
 
   return (

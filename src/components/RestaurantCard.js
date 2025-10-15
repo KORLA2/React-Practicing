@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {RESTAURANT_IMG} from '../../utils/constants'
+import { useSelector } from "react-redux";
 
 const RestaurantCard = ({Restaurant}) => {
 
 let {cloudinaryImageId,avgRating,cuisines,areaName,name,sla,costForTwo}=Restaurant;
 
-
+  // let {LoggedUser}=useContext(userContext);
+      let LoggedUser=useSelector(store=>store.cart.Name)
   return (
     <div className="bg-gray-300 m-3 w-[280px] p-3 rounded-2xl">
 <div>
@@ -14,10 +16,11 @@ let {cloudinaryImageId,avgRating,cuisines,areaName,name,sla,costForTwo}=Restaura
 
 <p className="text-lg font-bold py-4">{name}</p>
 <h3 className='text-slate-900'>{costForTwo}</h3>
- <h4>{cuisines.join(",")}</h4>   
+ <h4 className="m-1">{cuisines.join(" ")}</h4>   
  <h1>Area: {areaName}</h1>  
  <h5>Rating : {avgRating}</h5>
  <h5> Delivery : {sla.slaString}</h5> 
+ <h3>{LoggedUser}</h3>
     </div>
   )
 }

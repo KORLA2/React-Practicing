@@ -1,9 +1,17 @@
 import React from 'react'
 import {MENU_CARD_IMG} from "../../../utils/constants"
-
+import { useDispatch } from 'react-redux';
+import { addItem } from '../../../utils/cartSlice';
 const ItemList = ({itemCard}) => {
 
  let {name,price,defaultPrice,ratings,imageId}=itemCard.card.info;
+
+    let dispatch=useDispatch()
+let handleItem=(itemCard)=>{
+dispatch(addItem(itemCard))
+
+}
+
 return <div   className="flex justify-between items-center bg-gray-200 m-3 rounded-lg p-3">
                     <div > 
                     <p className='m-2'>{name}</p>
@@ -12,7 +20,7 @@ return <div   className="flex justify-between items-center bg-gray-200 m-3 round
                     </div>
                     <div>
                     <img className="w-40 h-40 rounded-lg" src={MENU_CARD_IMG+imageId}/> 
-                        <div className='absolute bg-black -my-8 p-1 mx-4 text-white shadow-lg rounded-lg'>
+                        <div className='absolute bg-black -my-8 p-1 mx-4 text-white shadow-lg rounded-lg' onClick={()=>{handleItem(itemCard)}}>
                             <button> Add + </button>
                         </div>
                         </div>

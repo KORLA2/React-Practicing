@@ -1,6 +1,6 @@
 # node_modules
 /node_modules
 # parcel Cache
-.parcel-cache
+/.parcel-cache
 # dist 
 /dist

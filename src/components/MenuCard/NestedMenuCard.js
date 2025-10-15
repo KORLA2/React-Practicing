@@ -1,14 +1,15 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import ItemList from './ItemList'
+import userContext from "../../../utils/userContext"
 const NestedMenuCard = ({card}) => {
 
 
 let[showItems,setShowItems]=useState([])
-
+ let {LoggedUser}=useContext(userContext)
 
 return (
     <div className="w-6/12 m-auto my-6  bg-gray-100 p-4 shadow-lg">
-   
+      <p>Hi {LoggedUser} Enjoy the Menu </p>
         <p className='text-xl font-bold'>{card.title}</p>
         <div>
         {
